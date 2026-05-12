@@ -9,7 +9,7 @@ export default function NotFound() {
     return (
         <div>
             <h1>404</h1>
-            <Button onClick={() => navigate(isAuth ? "/dashboard" : "/login")}></Button>
+            <Button onClick={() => navigate(isAuth ? "/dashboard" : "/login")}>Back to login</Button>
         </div>
     )
 }

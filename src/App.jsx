@@ -1,13 +1,10 @@
 import './App.css'
+import AppRouter from "../src/routes/AppRouter"
 
 function App() {
   
 
-  return (
-    <>
-      
-    </>
-  )
+  return ( <AppRouter />)
 }
 
 export default App
