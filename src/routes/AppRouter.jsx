@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import UserProfile from "../pages/UserProfile";
@@ -9,7 +9,10 @@ import ProtectedRoute from "../components/ProtectedRoute"
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/login" element={<Login />}></Route>
+      <Route path="/" element={<Navigate to="/login" />} />
+
+      <Route path="/login" element={<Login />} />
+
       <Route
         path="/dashboard"
         element={
@@ -17,7 +20,8 @@ export default function AppRouter() {
             <Dashboard />
           </ProtectedRoute>
         }
-      ></Route>
+      />
+
       <Route
         path="/users/:id"
         element={
@@ -25,8 +29,9 @@ export default function AppRouter() {
             <UserProfile />
           </ProtectedRoute>
         }
-      ></Route>
-      <Route path="*" element={<NotFound />}></Route>
+      />
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
-    );
+  );
 }
